@@ -1,0 +1,10 @@
+$main-font: 'Open Sans', sans-serif;
+$opacity-level: 0.8;
+$max-cont-width: 500px;
+
+// mixins
+
+@mixin size($val) {
+  width: $val;
+  height: $val;
+}

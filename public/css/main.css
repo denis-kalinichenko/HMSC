@@ -1,0 +1,54 @@
+/**
+ * Created by Denis Kalinichenko on 2015-02-09.
+ */
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  background: black;
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.player {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; }
+  .player iframe {
+    padding: 0;
+    margin: 0; }
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8) url("../img/tlen.jpg") center no-repeat;
+  background-size: cover;
+  opacity: 0.8; }
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  text-align: center; }
+
+.content {
+  width: 100%;
+  max-width: 500px;
+  display: inline-block; }
+
+/* Specify Swiper's Size: */
+.swiper-container, .swiper-slide {
+  width: 100%; }
+
+/*# sourceMappingURL=main.css.map */
