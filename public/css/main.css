@@ -2,7 +2,7 @@
  * Created by Denis Kalinichenko on 2015-02-09.
  */
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   margin: 0;
   background: black;
   color: white;
@@ -40,7 +40,8 @@ body {
   top: 0;
   left: 0;
   z-index: 3;
-  text-align: center; }
+  text-align: center;
+  overflow: auto; }
 
 .content {
   width: 100%;
@@ -49,6 +50,39 @@ body {
 
 /* Specify Swiper's Size: */
 .swiper-container, .swiper-slide {
-  width: 100%; }
+  width: 100%;
+  height: 560px; }
+
+.swiper-slide {
+  padding-top: 7%; }
+
+span.text {
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  font-weight: 100;
+  line-height: 1em; }
+
+#info {
+  font-size: 15em;
+  font-weight: 100;
+  line-height: 1em;
+  text-shadow: 0 0 40px black; }
+
+.source {
+  font-size: 12px; }
+
+a.link {
+  color: white;
+  text-decoration: underline; }
+
+a.link:active {
+  opacity: 0.5; }
+
+.bold {
+  font-weight: bold; }
+
+.cost_month {
+  font-size: 5em;
+  line-height: 1em; }
 
 /*# sourceMappingURL=main.css.map */

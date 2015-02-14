@@ -9,6 +9,19 @@ block content
             .swiper-container
                 .swiper-wrapper
                     .swiper-slide
-                        #info test
-                    .swiper-slide test
-                    .swiper-slide test
+                        span.text злотий
+                        #info  #{cost}
+                        .hashtag #goWSIiZ‬
+                    .swiper-slide
+                        div твоє навчання
+                        .cost_month ~
+                            span#cost_month #{cost_month}
+                            |  грн/міс.
+            .footer
+                .time оновлено о&nbsp;
+                    span#time #{time}
+                audio(src="https://cs9-1v4.vk.me/p2/28f6a9c5157862.mp3" autoplay loop)#audio
+                .source джерело:&nbsp;
+                    a(href='http://finance.ua/ru/currency' target='_blank').link.bold Finance.UA
+                    | &nbsp;
+                    a(href=url target='_blank')#url.link ("#{name}")

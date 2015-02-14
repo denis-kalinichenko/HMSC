@@ -34,14 +34,26 @@ document.addEventListener('DOMContentLoaded', function(){
     /* pages */
     var mySwiper = new Swiper('.swiper-container',{
         mode: 'horizontal',
-        loop: false
+        loop: false,
+        height: "auto"
     });
+
+    /* init time */
+    updateTime();
+
+    /* init track */
+    $("audio").volume="0";
 
     /* data via websockets */
     var socket = io.connect(window.location.href);
     socket.emit('getData');
     socket.on('data', function (data) {
-        $("info").textContent = data.cost;
+        console.log(data);
+        $("info").innerHTML = data.cost;
+        $("url").innerHTML = '("'+data.name+'")';
+        $("url").setAttribute("href", data.url);
+        $("cost_month").innerHTML = data.cost_month;
+        updateTime();
     });
 
 
@@ -51,3 +63,20 @@ document.addEventListener('DOMContentLoaded', function(){
 function $(id) {
     return document.getElementById(id); /* jQuery shit */
 }
+
+/* simple stupid time functions from w3schools examples, lol */
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+function updateTime() {
+    var d = new Date();
+    var h = addZero(d.getHours());
+    var m = addZero(d.getMinutes());
+    var s = addZero(d.getSeconds());
+    var time = h + ":" + m + ":" + s;
+    $("time").innerHTML = time;
+}
+

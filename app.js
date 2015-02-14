@@ -13,16 +13,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 
-var url = "http://resources.finance.ua/ua/public/currency-cash.json";
+global.url = "http://resources.finance.ua/ua/public/currency-cash.json";
 
 server.listen(80, function(){
     console.log('listening on *:80');
 
     io.on('connection', function (socket) {
-
         function refresh() {
             request({
-                url: url,
+                url: global.url,
                 json: true
             }, function (error, response, body) {
                 if (!error) if (response.statusCode === 200) {
@@ -35,7 +34,8 @@ server.listen(80, function(){
                         bank_link = (pln && Number(pln.ask).toFixed(2) > cost) ? entry.link : bank_link;
                         cost = (pln && Number(pln.ask).toFixed(2) > cost) ? Number(pln.ask).toFixed(2) : cost;
                     });
-                    socket.emit("data", { cost: cost, name: bank_name, url: bank_link });
+                    var cost_month = cost * 500;
+                    socket.emit("data", { cost: cost, name: bank_name, url: bank_link,  cost_month: cost_month});
                 }
             });
 
