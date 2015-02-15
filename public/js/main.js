@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function(){
     updateTime();
 
     /* init track */
-    $("audio").volume="0";
+    $("audio").volume="0.1";
 
     /* data via websockets */
     var socket = io.connect(window.location.href);
