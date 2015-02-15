@@ -49,10 +49,15 @@ document.addEventListener('DOMContentLoaded', function(){
     socket.emit('getData');
     socket.on('data', function (data) {
         console.log(data);
-        $("info").innerHTML = data.cost;
-        $("url").innerHTML = '("'+data.name+'")';
-        $("url").setAttribute("href", data.url);
-        $("cost_month").innerHTML = data.cost_month;
+        if(data.cost == 0) {
+            $("error").style.display = "block";
+        } else {
+            $("info").innerHTML = data.cost;
+            $("url").innerHTML = '("'+data.name+'")';
+            $("url").setAttribute("href", data.url);
+            $("cost_month").innerHTML = data.cost_month;
+            $("error").style.display = "none";
+        }
         updateTime();
     });
 
